@@ -1,0 +1,39 @@
+#top {
+  padding: 8px, 40px, 8px, 40px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e1e6ef;
+  display: flex;
+  justify-content: space-between;
+}
+
+#top-logo {
+  display: flex;
+  padding: 2px 0px 2px 18px;
+}
+
+#weathergrid_image {
+  width: 51.507938385009766px;
+  height: 52.91844177246094px;
+  padding-right: 8px;
+}
+
+#weathergrid_paragraph {
+  width: 92.8203125px;
+  height: 15.6015625px;
+  color: #1d2433;
+  font-weight: bold;
+}
+
+#top_menu {
+  display: flex;
+  flex-direction: row;
+  width: 560px;
+}
+
+#menu_items {
+  width: 160px;
+}
+
+#menu_log_in {
+  width: 160px;
+}
