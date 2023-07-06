@@ -65,8 +65,6 @@ body {
       display: block;
       width: 24px;
       height: 24px;
-      background-color: green;
-
       &:hover {
         cursor: pointer;
       }
@@ -84,11 +82,16 @@ body {
   background: #fafafa;
   gap: 24px;
 
+  &-locations {
+    min-width: 380px;
+  }
+
   &-locations-title {
     display: flex;
     padding: 8px;
+    padding-top: 0px;
     align-items: flex-start;
-    gap: 8px;
+    margin-bottom: 12px;
 
     &-text {
       color: rgba(29, 36, 51, 0.8);
@@ -101,17 +104,40 @@ body {
   }
 
   &-locations-field-search {
-    border-radius: 4px;
-    border: 1px solid var(--primary-palette-neutral-300, #e1e6ef);
-    background: var(--primary-palette-neutral-0, #fff);
     display: flex;
-    padding: 10px 14px;
+    height: 38px;
     align-items: center;
     gap: 8px;
+    position: relative;
+
+    input {
+      outline: none;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #e1e6ef;
+      border-radius: 4px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
 
     &-icon {
-      width: 20px;
-      height: 20px;
+      position: absolute;
+      left: 14px;
+      top: 10px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &-close {
+      position: absolute;
+      right: 14px;
+      top: 10px;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     &-text-with-x-close {
@@ -142,40 +168,21 @@ body {
     display: flex;
     padding-top: 16px;
     flex-direction: column;
-    align-items: flex-start;
     gap: 16px;
   }
 
-  &-locations-city-cards:nth-child(1) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 4px;
-    border: 2px solid #0a6fc2;
-    background: #e9f5fb;
-  }
-
   &-locations-city-cards {
-    padding: 16px;
     display: flex;
-    //height: 72px;
-    justify-content: center;
     align-items: center;
-    align-self: stretch;
     border-radius: 4px;
     border: 1px solid #e1e6ef;
     background: #fff;
+    padding: 16px;
+    gap: 16px;
+    position: relative;
 
     &-div-img {
       //position: absolute;
-    }
-
-    &-content {
-      display: flex;
-      //justify-content: space-between;
-      //padding: 16px;
-      align-items: center;
-      gap: 16px;
     }
 
     &-text {
@@ -199,6 +206,13 @@ body {
       line-height: normal;
     }
 
+    &-div-chevron-right {
+      position: absolute;
+      right: 16px;
+      top: 24px;
+      margin-left: 5px;
+    }
+
     &-city {
       color: rgba(29, 36, 51, 0.8);
       font-size: 16px;
@@ -218,7 +232,7 @@ body {
     }
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 700px) {
     flex-direction: column;
     align-items: center;
   }
@@ -232,14 +246,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
   flex: 1 0 0;
 
   &-title {
     display: flex;
-    padding: 8px 8px 4px 8px;
+    padding: 0px 8px 4px 8px;
     align-items: center;
-    gap: 16px;
+    margin-bottom: 8px;
     align-self: stretch;
 
     &-text {
@@ -251,7 +264,6 @@ body {
       font-family: Inter;
       font-style: normal;
       font-weight: 400;
-      line-height: 36px;
     }
 
     &-heart-icon {
@@ -265,35 +277,55 @@ body {
       background: var(--primary-palette-neutral-0, #fff);
     }
 
+    &-charts {
+      width: 100%;
+    }
+
     &-charts-top-title-content {
       //width: 876px;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
       gap: 16px;
       flex: 1 0 0;
       align-self: stretch;
       background-image: url(https://raw.githubusercontent.com/pgiannou/training-Task1/main/Weather_BG.png);
+      padding: 24px;
+      margin-bottom: 48px;
+      border-radius: 4px;
 
-      &-temperature {
-        color: var(--text-icon-primary-black, #1d2433);
-        text-align: right;
-        font-size: 32px;
-        font-family: Inter;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+      &-left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+
+        &-temperature {
+          color: var(--text-icon-primary-black, #1d2433);
+          text-align: right;
+          font-size: 32px;
+          font-family: Inter;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+
+        &-details {
+          color: var(--text-icon-primary-black, #1d2433);
+          text-align: right;
+          font-size: 16px;
+          font-family: Inter;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
       }
 
-      &-details {
-        color: var(--text-icon-primary-black, #1d2433);
-        text-align: right;
-        font-size: 16px;
-        font-family: Inter;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+      &-right {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
       }
     }
 
@@ -305,6 +337,24 @@ body {
     &-city-charts-tab {
       display: flex;
       gap: 10px;
+    }
+  }
+
+  &-title-city-charts {
+    &-item {
+      height: 200px;
+      background: white;
+      border: 1px solid #e1e6ef;
+      border-radius: 4px;
+      padding: 24px;
+      margin-bottom: 48px;
+
+      &-title {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 30px;
+      }
     }
   }
 }
@@ -414,4 +464,9 @@ body {
   .body {
     display: none;
   }
+}
+
+.row {
+  background-color: #3f444d;
+  height: 300px;
 }
